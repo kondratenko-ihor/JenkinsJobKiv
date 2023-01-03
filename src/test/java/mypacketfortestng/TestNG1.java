@@ -20,7 +20,6 @@ public class TestNG1 {
 //    }
 
     @BeforeTest
-    @Step("Setting name {testName}")
     void setUpTestName() {
         String[] namesList = {"Jack", "Bob", "Bill", ""};
         testName = namesList[new Random().nextInt(namesList.length)];

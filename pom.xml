@@ -13,15 +13,11 @@
         <maven.compiler.target>11</maven.compiler.target>
         <aspectj.version>1.8.10</aspectj.version>
         <allure.version>2.17.3</allure.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+       
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.6.0</version>
-        </dependency>
+
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp</artifactId>
@@ -61,6 +57,11 @@
                     </argLine>
                 </configuration>
                 <dependencies>
+                    <dependency>
+                        <groupId>org.testng</groupId>
+                        <artifactId>testng</artifactId>
+                        <version>7.6.0</version>
+                    </dependency>
                     <dependency>
                         <groupId>org.aspectj</groupId>
                         <artifactId>aspectjweaver</artifactId>
