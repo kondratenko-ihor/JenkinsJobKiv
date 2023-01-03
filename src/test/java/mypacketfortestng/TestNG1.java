@@ -2,6 +2,7 @@ package mypacketfortestng;
 
 import io.qameta.allure.AllureResultsWriter;
 import io.qameta.allure.Step;
+import io.qameta.allure.Story;
 import io.qameta.allure.testng.AllureTestNg;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -40,7 +41,9 @@ public class TestNG1 {
         System.out.println("BEFORE CLASS ANNOTATION");
     }
 
+    @Story("Checking the name is not empty")
     @Test
+    @Step("Checking the name isn't empty {testName} step")
     void checkNameNotEmpty(){
         Assert.assertTrue(testName.length() > 0);
     }
