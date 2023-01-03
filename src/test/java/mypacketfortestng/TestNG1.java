@@ -4,6 +4,7 @@ import io.qameta.allure.AllureResultsWriter;
 import io.qameta.allure.Step;
 import io.qameta.allure.Story;
 import io.qameta.allure.testng.AllureTestNg;
+import io.qameta.allure.testng.Tags;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import java.util.Random;
@@ -21,9 +22,12 @@ public class TestNG1 {
 
     @BeforeTest
     void setUpTestName() {
+
         String[] namesList = {"Jack", "Bob", "Bill", ""};
         testName = namesList[new Random().nextInt(namesList.length)];
         System.out.println("Name is " + "[" + testName + "]");
+        step("Step 1: the name is", () ->
+                testName);
     }
 
 
