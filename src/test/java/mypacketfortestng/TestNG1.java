@@ -26,8 +26,7 @@ public class TestNG1 {
         String[] namesList = {"Jack", "Bob", "Bill", ""};
         testName = namesList[new Random().nextInt(namesList.length)];
         System.out.println("Name is " + "[" + testName + "]");
-        step("Step 1: the name is", () ->
-                testName);
+        step("Step 1: the name is" + testName);
     }
 
 
