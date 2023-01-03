@@ -17,7 +17,7 @@ public class TestNG1 {
 
     @BeforeTest
     void setUpTestName() {
-        String[] namesList = {"Jack", "Bob", "Bill"};
+        String[] namesList = {"Jack", "Bob", "Bill", ""};
         testName = namesList[new Random().nextInt(namesList.length)];
         System.out.println("Name is " + "[" + testName + "]");
     }
@@ -49,23 +49,23 @@ public class TestNG1 {
     }
 
 
-//    @Test
-//    void nameNotEmpty() {
-//        System.out.println("Check name isn't empty");
-//        Assert.assertTrue(testName.length() > 0, "Name is empty");
-//    }
-//
-//    @Test(dependsOnMethods = "nameNotEmpty", alwaysRun = true)
-//    void checkNameIsJack() {
-//        System.out.println("Checking name is Jack");
-//        Assert.assertEquals(testName, "Jack", "Name not Jack");
-//    }
-//
-//    @Test(dependsOnMethods = "nameNotEmpty", alwaysRun = true)
-//    void checkNameIsBob() {
-//        System.out.println("Checking name is Bob");
-//        Assert.assertEquals(testName, "Bob", "Name not Bob");
-//    }
+    @Test
+    void nameNotEmpty() {
+        System.out.println("Check name isn't empty");
+        Assert.assertTrue(testName.length() > 0, "Name is empty");
+    }
+
+    @Test(dependsOnMethods = "nameNotEmpty", alwaysRun = true)
+    void checkNameIsJack() {
+        System.out.println("Checking name is Jack");
+        Assert.assertEquals(testName, "Jack", "Name not Jack");
+    }
+
+    @Test(dependsOnMethods = "nameNotEmpty", alwaysRun = true)
+    void checkNameIsBob() {
+        System.out.println("Checking name is Bob");
+        Assert.assertEquals(testName, "Bob", "Name not Bob");
+    }
 
 
     @AfterTest
