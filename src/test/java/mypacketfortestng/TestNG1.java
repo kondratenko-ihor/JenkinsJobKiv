@@ -7,6 +7,8 @@ import io.qameta.allure.testng.AllureTestNg;
 import io.qameta.allure.testng.Tags;
 import org.testng.Assert;
 import org.testng.annotations.*;
+
+import java.util.Locale;
 import java.util.Random;
 
 import static io.qameta.allure.Allure.step;
@@ -15,19 +17,19 @@ public class TestNG1 {
 
     static String testName;
 
-//    @BeforeSuite
-//    void beforeSuit() {
-//        System.out.println("'Before suite'");
-//    }
-
-    @BeforeTest
+    @BeforeSuite
     void setUpTestName() {
-
         String[] namesList = {"Jack", "Bob", "Bill", ""};
         testName = namesList[new Random().nextInt(namesList.length)];
-        System.out.println("Name is " + "[" + testName + "]");
-        step("Step 1: the name is" + testName);
+        step("Step 1: the name is: " + "[ "+ testName + " ] ");
     }
+
+//    @BeforeTest
+//    void setUpTestName() {
+//        String[] namesList = {"Jack", "Bob", "Bill", ""};
+//        testName = namesList[new Random().nextInt(namesList.length)];
+//        step("Step 1: the name is: " + "[ "+ testName + " ] ");
+//    }
 
 
     @BeforeGroups({"nameTests"})
@@ -49,7 +51,7 @@ public class TestNG1 {
     @Test
     void checkNameNotEmpty(){
         step("Step 1: Checking the name not empty ", () ->
-                Assert.assertTrue(testName.length() > 0));
+                Assert.assertTrue(testName.length() > 0, "Name is empty"));
     }
 
     @Test
