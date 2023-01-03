@@ -21,7 +21,7 @@ public class TestNG1 {
     void setUpTestName() {
         String[] namesList = {"Jack", "Bob", "Bill", ""};
         testName = namesList[new Random().nextInt(namesList.length)];
-        step("Step 1: the name is: " + "[ "+ testName + " ] ");
+        step("Launch from test branch " + "[ "+ testName + " ] ");
     }
 
 //    @BeforeTest
