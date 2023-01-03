@@ -8,6 +8,8 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 import java.util.Random;
 
+import static io.qameta.allure.Allure.step;
+
 public class TestNG1 {
 
     static String testName;
@@ -43,9 +45,9 @@ public class TestNG1 {
 
     @Story("Checking the name is not empty")
     @Test
-    @Step("Checking the name isn't empty {testName} step")
     void checkNameNotEmpty(){
-        Assert.assertTrue(testName.length() > 0);
+        step("Step 1: Checking the name not empty ", () ->
+                Assert.assertTrue(testName.length() > 0));
     }
 
     @Test
