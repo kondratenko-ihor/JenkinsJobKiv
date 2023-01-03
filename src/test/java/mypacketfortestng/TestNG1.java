@@ -1,6 +1,7 @@
 package mypacketfortestng;
 
 import io.qameta.allure.AllureResultsWriter;
+import io.qameta.allure.Step;
 import io.qameta.allure.testng.AllureTestNg;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -16,6 +17,7 @@ public class TestNG1 {
 //    }
 
     @BeforeTest
+    @Step("Setting name {testName}")
     void setUpTestName() {
         String[] namesList = {"Jack", "Bob", "Bill", ""};
         testName = namesList[new Random().nextInt(namesList.length)];
